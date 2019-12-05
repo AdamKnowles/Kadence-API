@@ -23,7 +23,7 @@ class RunSerializer(serializers.HyperlinkedModelSerializer):
             view_name='runs',
             lookup_field='id'
         )
-        fields = ('id', 'time', 'date', 'distance', 'duration')
+        fields = ('id', 'time', 'date', 'distance', 'duration', 'pace')
 
         depth = 1
 
@@ -64,13 +64,14 @@ class Runs(ViewSet):
     def list(self, request):
         
 
-    # at the bottom, in the serializer, it returns all patients because "patients" is defined as "patient.objects.all()"
+    
         runs = Run.objects.all()
         
         serializer = RunSerializer(
             runs, many=True, context={'request': request})
         return Response(serializer.data)
 
+        
     
 
         
