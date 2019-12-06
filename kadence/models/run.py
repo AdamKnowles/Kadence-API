@@ -12,7 +12,7 @@ class Run(models.Model):
         verbose_name = ("run")
         verbose_name_plural = ("runs")
         
-    @property
+    
     def pace(self):
 
         # get Run object
@@ -42,7 +42,7 @@ class Run(models.Model):
 
         return new_pace
 
-    @property
+    
     def new_duration(self):
         run = Run.objects.get(pk=self.pk)
 

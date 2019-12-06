@@ -65,7 +65,7 @@ class Runs(ViewSet):
         
 
     
-        runs = Run.objects.all()
+        runs = Run.objects.all().order_by('date').reverse()
         
         serializer = RunSerializer(
             runs, many=True, context={'request': request})
