@@ -11,7 +11,8 @@ class Run(models.Model):
     class Meta:
         verbose_name = ("run")
         verbose_name_plural = ("runs")
-
+        
+    @property
     def pace(self):
 
         # get Run object
@@ -40,3 +41,19 @@ class Run(models.Model):
         new_pace = (f'{round(minutes_and_seconds[1])}:{whole_seconds:02}')
 
         return new_pace
+
+    @property
+    def new_duration(self):
+        run = Run.objects.get(pk=self.pk)
+
+        # get duration value
+        duration = str(run.duration)
+
+        # split string into list
+        duration_list = duration.split(":")
+
+        final_duration = (f'{duration_list[0]} hours {duration_list[1]} min {duration_list[2]} sec')
+        
+
+        return final_duration
+
