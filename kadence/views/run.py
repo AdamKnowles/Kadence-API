@@ -23,7 +23,7 @@ class RunSerializer(serializers.HyperlinkedModelSerializer):
             view_name='runs',
             lookup_field='id'
         )
-        fields = ('id', 'time', 'date', 'distance', 'duration', 'pace')
+        fields = ('id', 'time', 'date', 'distance', 'duration', 'pace', 'new_duration')
 
         depth = 1
 
