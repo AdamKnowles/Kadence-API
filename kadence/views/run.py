@@ -60,6 +60,20 @@ class Runs(ViewSet):
         except Exception as ex:
             return HttpResponseServerError(ex)
 
+    def destroy(self, request, pk=None):
+        
+        try:
+            run = Run.objects.get(pk=pk)
+            run.delete()
+
+            return Response({}, status=status.HTTP_204_NO_CONTENT)
+
+        except Run.DoesNotExist as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as ex:
+            return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
     
     def list(self, request):
         

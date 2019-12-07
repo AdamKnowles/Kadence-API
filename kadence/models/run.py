@@ -33,6 +33,7 @@ class Run(models.Model):
 
         # split that resulting pace into tuple
         minutes_and_seconds = math.modf(pace)
+        
 
         # get the places after decimal and turn it into seconds
         whole_seconds = round(minutes_and_seconds[0] * 60)
