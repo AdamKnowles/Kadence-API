@@ -12,7 +12,7 @@ class Run(models.Model):
         verbose_name = ("run")
         verbose_name_plural = ("runs")
         
-    @property
+    
     def pace(self):
 
         # get Run object
@@ -33,6 +33,7 @@ class Run(models.Model):
 
         # split that resulting pace into tuple
         minutes_and_seconds = math.modf(pace)
+        
 
         # get the places after decimal and turn it into seconds
         whole_seconds = round(minutes_and_seconds[0] * 60)
@@ -42,7 +43,7 @@ class Run(models.Model):
 
         return new_pace
 
-    @property
+    
     def new_duration(self):
         run = Run.objects.get(pk=self.pk)
 
