@@ -6,7 +6,8 @@
         "time": "01:08:12",
         "date": "2019-12-12",
         "distance": 3.11,
-        "duration": "00:12:12"
+        "duration": "00:12:12",
+        "got_after_it": "False"
       }
         
       

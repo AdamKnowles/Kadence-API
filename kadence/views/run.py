@@ -23,7 +23,7 @@ class RunSerializer(serializers.HyperlinkedModelSerializer):
             view_name='runs',
             lookup_field='id'
         )
-        fields = ('id', 'time', 'date', 'distance', 'duration', 'pace', 'new_duration')
+        fields = ('id', 'time', 'date', 'distance', 'duration','got_after_it', 'pace', 'new_duration')
 
         depth = 1
 
@@ -42,6 +42,7 @@ class Runs(ViewSet):
         new_run.date = request.data["date"]
         new_run.distance = request.data["distance"]
         new_run.duration = request.data["duration"]
+        new_run.got_after_it = request.data["got_after_it"]
         new_run.save()
 
         serializer = RunSerializer(new_run, context={'request': request})

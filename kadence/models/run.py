@@ -7,6 +7,7 @@ class Run(models.Model):
     date = models.DateField()
     distance = models.DecimalField(max_digits=10, decimal_places=2)
     duration = models.TimeField(auto_now_add=False)
+    got_after_it = models.BooleanField()
 
     class Meta:
         verbose_name = ("run")
