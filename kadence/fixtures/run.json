@@ -5,6 +5,7 @@
       "fields": {
         "time": "01:08:12",
         "date": "2019-12-12",
+        "title": "Great Run!",
         "distance": 3.11,
         "duration": "00:12:12",
         "got_after_it": "False"
