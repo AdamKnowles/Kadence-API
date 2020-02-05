@@ -5,6 +5,7 @@ import math
 class Run(models.Model):
     time = models.TimeField(auto_now_add=False)
     date = models.DateField()
+    title = models.CharField(max_length=100)
     distance = models.DecimalField(max_digits=10, decimal_places=2)
     duration = models.TimeField(auto_now_add=False)
     got_after_it = models.BooleanField()
